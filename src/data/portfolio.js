@@ -6,8 +6,8 @@ export const portfolioData = {
     email: "princelohia.work@gmail.com",
     phone: "Not available",
     location: "Delhi, India",
-    github: "",
-    linkedin: "",
+    github: "https://github.com/princelohiya/",
+    linkedin: "https://www.linkedin.com/in/princelohiya/",
     bio: "Full-Stack Developer with hands-on experience building React/Next.js applications, REST APIs with Node.js, and data-driven dashboards. I enjoy shipping production features end-to-end — from database schemas to polished, responsive UI.",
   },
   skills: {
