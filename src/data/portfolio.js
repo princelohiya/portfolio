@@ -38,18 +38,35 @@ export const portfolioData = {
       "WebSockets",
       "Stripe",
     ],
-    database: ["PostgreSQL", "MongoDB", "Prisma ORM", "Redis", "Cloudflare KV"],
+    database: [
+      "PostgreSQL",
+      "MongoDB",
+      "Prisma ORM",
+      "Redis",
+      "Cloudflare KV",
+      "AWS S3",
+      "Supabase",
+    ],
     cloud: [
       "AWS (EC2, S3, CloudFront)",
       "Docker",
       "Nginx",
       "TurboRepo",
-      "Vercel",
       "Cloudflare Workers",
       "Git",
+      "Vercel",
+      "render",
+    ],
+    ai: [
+      "RAG (Retrieval-Augmented Generation)",
+
+      "LLM Integration",
+      "Vector Databases",
+      "Embeddings",
+      "LangChain",
     ],
     testing: ["Jest", "Figma", "PowerShell", "WSL"],
-    ai: ["LLM Integration", "RAG", "Vector Databases"],
+
     concepts: ["Data Structures & Algorithms", "OOPs"],
   },
   experience: [
@@ -81,7 +98,95 @@ export const portfolioData = {
   ],
   projects: [
     {
-      name: "DocPilot — AI-Powered Document Intelligence",
+      name: "Precise Notes — In-Browser Lecture Synthesizer",
+      description:
+        "Privacy-first AI tool that turns lecture videos into structured Markdown notes, processing video entirely in the browser.",
+      highlights: [
+        "Built a privacy-first lecture-to-notes pipeline with FFmpeg compiled to WebAssembly, extracting and segmenting audio from video files entirely in the browser so the original video never leaves the user's device.",
+        "Implemented chunked AI synthesis through a serverless Next.js API route, sending 10-minute audio segments to Gemini's multimodal API and stitching responses into clean Markdown with live per-chunk progress and API rate-limit cooldown handling.",
+        "Configured cross-origin isolation headers for SharedArrayBuffer and built export features including clipboard copy, .md download, and Notion/Obsidian-ready formatted output.",
+      ],
+      tech: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "FFmpeg.wasm",
+        "WebAssembly",
+        "Google Gemini API",
+        "Tailwind CSS",
+      ],
+      date: "Aug 2026",
+      liveUrl: "",
+      githubUrl: "https://github.com/princelohiya/precise-notes",
+    },
+    {
+      name: "Digital Heroes Golf — Charity Subscription & Draw Platform",
+      description:
+        "Full-stack subscription platform connecting golf-score competitions to monthly charity-funded prize draws.",
+      highlights: [
+        "Built an end-to-end Stripe subscription flow (monthly/yearly plans) with signature-verified webhooks and a service-role database client that securely activates user tiers on payment.",
+        "Engineered an admin-only prize draw engine that matches active subscribers' golf scores against published winning numbers, computes fractional 3/4/5-match payouts from a tiered prize pool, and carries unmatched jackpots forward.",
+        "Implemented a winner verification workflow with scorecard uploads to Supabase Storage, an admin review queue for payout approval, and Supabase Auth with role-based access separating users from admin routes.",
+      ],
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Stripe",
+        "Supabase (PostgreSQL, Auth, Storage)",
+        "Tailwind CSS",
+      ],
+      date: "Mar 2026",
+      liveUrl: "https://digital-heroes-golf-one.vercel.app",
+      githubUrl: "https://github.com/princelohiya/digital-heroes-golf",
+    },
+    {
+      name: "Medium — Full-Stack Blogging Platform",
+      description:
+        "Medium-style blogging platform on a Cloudflare Workers + React monorepo with edge PostgreSQL.",
+      highlights: [
+        "Architected a three-package monorepo (Cloudflare Workers API, React SPA, shared library) and published a reusable Zod validation package to npm, enforcing identical type-safe input schemas on both client and server.",
+        "Built JWT authentication with Hono middleware for route protection and implemented full blog CRUD (publish, update, feed, single post, author profiles) on PostgreSQL via Prisma's edge client with Prisma Accelerate connection pooling.",
+        "Deployed the serverless API to Cloudflare Workers and the React/Tailwind frontend to Vercel with client-side protected routes and auth context.",
+      ],
+      tech: [
+        "React",
+        "TypeScript",
+        "Hono",
+        "Cloudflare Workers",
+        "Prisma ORM",
+        "PostgreSQL",
+        "Zod",
+        "Tailwind CSS",
+      ],
+      date: "Jul 2025",
+      liveUrl: "https://mediumpl.vercel.app/",
+      githubUrl: "https://github.com/princelohiya/Medium",
+    },
+    {
+      name: "GigFlow — Freelance Marketplace",
+      description:
+        "MERN marketplace where clients post gigs, freelancers bid, and hiring executes as an atomic database transaction.",
+      highlights: [
+        "Developed a freelance marketplace with gig posting, title search over an indexed MongoDB collection, and a bidding system with owner-only bid visibility.",
+        "Implemented the hire flow as an atomic MongoDB transaction that marks the winning bid, closes the gig, and rejects all competing bids in one commit with rollback on failure, preventing double-booking under concurrent hires.",
+        "Secured the API with bcrypt password hashing and JWT tokens delivered in HttpOnly cookies behind a verification middleware, and added Socket.io-powered real-time hire notifications broadcast to freelancers.",
+      ],
+      tech: [
+        "React",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Socket.io",
+        "JWT",
+        "Tailwind CSS",
+      ],
+      date: "Jan 2026",
+      liveUrl: "https://gigflowpl.vercel.app",
+      githubUrl: "https://github.com/princelohiya/GigFlow-Platform",
+    },
+    {
+      name: "DocMind — AI-Powered Document Intelligence",
       description:
         "Context-aware Q&A over large PDF documents using a RAG pipeline.",
       highlights: [
@@ -104,8 +209,8 @@ export const portfolioData = {
       ],
       tech: ["React", "TypeScript", "Node.js", "AES Encryption", "WebSockets"],
       date: "Dec 2025",
-      liveUrl: "",
-      githubUrl: "",
+      liveUrl: "https://cipherchatroom.vercel.app/",
+      githubUrl: "https://github.com/princelohiya/Secure-Chat-BE",
     },
     {
       name: "Zap-Wallet — Digital Wallet Application",
@@ -117,13 +222,14 @@ export const portfolioData = {
       ],
       tech: ["MongoDB", "Express.js", "React", "Node.js", "Zod"],
       date: "Oct 2025",
-      liveUrl: "",
-      githubUrl: "",
+      liveUrl: "https://zap--wallet.vercel.app/",
+      githubUrl: "https://github.com/princelohiya/ZapWallet",
     },
   ],
   achievements: [
     "Earned Certificate of Excellence in Java DSA (Coding Ninjas) and solved 150+ problems on LeetCode.",
     "Successfully managed production deployments for freelance clients and personal projects (Edge functions).",
+    "Completed Front-End Web Development Bootcamp by Neamat Andishmand on Udemy",
   ],
   education: [
     {

@@ -1,14 +1,15 @@
-import Reveal from './Reveal';
+import Reveal from "./Reveal";
 
 const groups = [
-  { key: 'languages', label: 'Languages', icon: '</>' },
-  { key: 'frontend', label: 'Frontend', icon: '▤' },
-  { key: 'backend', label: 'Backend', icon: '⌘' },
-  { key: 'database', label: 'Database & Caching', icon: '⛁' },
-  { key: 'cloud', label: 'Cloud & DevOps', icon: '☁' },
-  { key: 'testing', label: 'Testing & Tools', icon: '✓' },
-  { key: 'ai', label: 'AI', icon: '✦' },
-  { key: 'concepts', label: 'Core Concepts', icon: '∞' },
+  { key: "Programming languages", label: "Languages", icon: "</>" },
+  { key: "frontend", label: "Frontend", icon: "▤" },
+  { key: "backend", label: "Backend", icon: "⌘" },
+  { key: "database", label: "Database & Caching", icon: "⛁" },
+  { key: "cloud", label: "Cloud & DevOps", icon: "☁" },
+  { key: "ai", label: "AI", icon: "✦" },
+  { key: "testing", label: "Testing & Tools", icon: "✓" },
+
+  { key: "concepts", label: "Core Concepts", icon: "∞" },
 ];
 
 export default function Skills({ skills }) {
